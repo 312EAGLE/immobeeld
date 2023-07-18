@@ -1,0 +1,157 @@
+
+<body>
+  <h1>Booking form</h1>
+  <!-- Step 1 -->
+  <h1>Step 1</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-step form-step-active">
+        <div class="input-group">
+            <label for="id_type">Type</label>
+            {{ form.type }}
+        </div>
+        <div class="input-group">
+            <label for="id_land">Land</label>
+            {{ form.land }}
+        </div>
+        <div class="input-row">
+            <div class="input-group medium-label">
+                <label for="id_straatnaam">Straatnaam</label>
+                {{ form.straatnaam }}
+            </div>
+            <div class="input-group small-label">
+                <label for="id_huisnummer">Huisnummer</label>
+                {{ form.huisnummer }}
+            </div>
+            <div class="input-group small-label">
+                <label for="id_toevoeging">Toevoeging</label>
+                {{ form.toevoeging }}
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="id_postcode">Postcode</label>
+            {{ form.postcode }}
+        </div>
+        <div class="input-group">
+            <label for="id_plaats">Plaats</label>
+            {{ form.plaats }}
+        </div>
+        <div class="input-group">
+            <label for="id_gebruiksoppervlakte">Gebruiksoppervlakte (m²)</label>
+            {{ form.gebruiksoppervlakte }}
+        </div>
+        <div class="input-group">
+            <label for="id_oppervlakteBijgebouwen">Oppervlakte bijgebouwen (m²)</label>
+            {{ form.oppervlakteBijgebouwen }}
+        </div>
+        <div class="input-group">
+            <label for="id_perceel">Perceel (m²)</label>
+            {{ form.perceel }}
+        </div>
+    <!-- Step 1 end -->
+    <!-- Step 2 start -->
+    <H1>Step 2</H1>
+    <div class="input-group">
+      <label for="id_services">Services</label>
+      {% for choice in form.SERVICE_CHOICES %}
+        <div class="input-group">
+          <input type="checkbox" name="services" id="{{ choice.0 }}" value="{{ choice.0 }}">
+          <label for="{{ choice.0 }}">{{ choice.1 }}</label>
+          <span class="service-price">€{{ choice.2 }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+
+    <div id="total-price"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Get the checkbox elements
+        var checkboxes = $('input[name="services"]');
+        // Calculate and update the total price on change
+        checkboxes.on('change', function() {
+          var totalPrice = 0;
+          checkboxes.each(function() {
+            if ($(this).is(':checked')) {
+              var servicePrice = parseFloat($(this).siblings('.service-price').text().replace('€', ''));
+              if (!isNaN(servicePrice)) {
+                totalPrice += servicePrice;
+              }
+            }
+          });
+          var totalExclVat = totalPrice.toFixed(2);
+          var totalInclVat = (totalPrice * 1.21).toFixed(2);
+          $('#total-price').text('Total Price (Excl. VAT): €' + totalExclVat + ' | Total Price (Incl. VAT): €' + totalInclVat);
+        });
+      });
+      
+    </script>
+    <!-- End step 2 -->
+    <!-- step 3 start -->
+    <h1>Step 3</h1>
+    <h1>Retrieve keys?</h1>
+    {{ form.keys }}
+    <h1>Retrieve keys from:</h1>
+    {{ form.get_keys }}
+    <h1>Who will receive the files?</h1>
+    {{ form.delivery_recipient }}
+    <h1>Who will receive the invoice?</h1>
+    {{ form.invoice_recipient }}
+    <h1>Cost reference?</h1>
+    {{ form.cost_reference }}
+    
+
+    <h1>STEP 4</h1>
+    <h1>Ophalen sleutel </h1>
+
+    <H3>naam:</H3>
+    {{ form.get_keys_name }}
+    <H3>phone:</H3>
+    {{ form.get_keys_phone }}
+    <H3>email:</H3>
+    {{ form.get_keys_email }}
+    <H3>adrss:</H3>
+    {{ form.get_keys_adr }}
+    <H3>zip:</H3>
+    {{ form.get_keys_zip }}
+    <H3>stad:</H3>
+    {{ form.get_keys_city }}
+    <H3>taal:</H3>
+    {{ form.get_keys_language }}
+    
+    <h1>Facturatie </h1>
+    <H3>inv_name:</H3>
+    {{ form.inv_name }}
+    <H3>inv_vat:</H3>
+    {{ form.inv_vat }}
+    <H3>inv_adr:</H3>
+    {{ form.inv_adr }}
+    <H3>inv_zip:</H3>
+    {{ form.inv_zip }}
+    <H3>inv_city:</H3>
+    {{ form.inv_city }}
+    <H3>inv_country:</H3>
+    {{ form.inv_country }}
+    <H3>inv_phone:</H3>
+    {{ form.inv_phone }}
+    <H3>inv_email:</H3>
+    {{ form.inv_email }}
+
+    
+    <h1>opleveren bestanden </h1>
+    <H3>rec_email:</H3>
+    {{ form.rec_email }}
+
+    <H3>rec_email_owner:</H3>
+    {{ form.rec_email_owner }}
+
+    <H3>rec_email_other:</H3>
+    {{ form.rec_email_other }}
+
+    <button type="submit">Submit</button>
+      </form>
+      
+
+      
+</body>

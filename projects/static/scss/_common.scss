@@ -1,0 +1,243 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+//variables
+$primary: #1f2e4b;
+$secondary: #1f7ff0;
+$textColor: #1f2e4b;
+$btnOff: #1313134D;
+$offwhite: #e8f0fc;
+
+$box-shadow-dark: 0px 0px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-down: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset default styles */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
+em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,
+b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
+canvas,details,embed,figure,figcaption,footer,header,hgroup,
+menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+img{
+  pointer-events: none
+}
+
+::selection {
+  color: white;
+  background: $secondary;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .5s;
+  color: $textColor;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $primary;
+}
+
+p {
+  margin: 0;
+  color: $textColor;
+}
+
+
+
+
+/* Set headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  color: $primary;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Seymour One', sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
+/* Set lists */
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: decimal;
+}
+
+
+/* Set tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: bold;
+}
+
+button {
+  background: $secondary;
+  border: none;
+  font-size: 15px;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: .4s;
+  border-radius: 5px;
+  &:hover{
+    background: $primary;
+  }
+}
+a.btn-primary {
+  background: $secondary;
+  border: none;
+  font-size: 12px;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .4s;
+  &:hover{
+    background: $primary;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+//bootstrap style
+.container{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.form-control, .form-select{
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+  &:focus{
+    box-shadow: none;
+    border-color: $secondary;
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 35px;
+  label:not(.form-check-label) {
+    position: absolute;
+    cursor: text;
+    z-index: 1;
+    top: 15px;
+    left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+    color: $secondary;
+    transition: all .3s ease;
+    font-size: 13px;
+    top: -10px;
+    color: $secondary;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  .form-control, .form-select {
+    padding: 13px 15px;
+    background: transparent;
+    border: solid 1px #ccc;
+    transition: all .3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    
+    &:focus {
+      border-color: $secondary;
+    }
+  }
+}
+.check-form-group{
+  position: relative;
+  margin-bottom: 35px;
+  label:not(.form-check-label) {
+    cursor: text;
+    z-index: 1;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fff;
+    color: $secondary;
+    transition: all .3s ease;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+
+}

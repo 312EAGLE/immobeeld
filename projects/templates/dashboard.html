@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Immobeeld</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel='stylesheet'
+		href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css'/>
+
+	<link rel="icon" href="/static/images/favicon.png">
+	<link rel="stylesheet" href="/static/scss/style.css">
+</head>
+
+<body>
+  {% include 'navbar_dash.html' %}
+{%block content%}
+  <main>
+		<section class="account">
+      <nav>
+        <div class="container">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-account-tab" data-bs-toggle="tab" data-bs-target="#nav-account" type="button" role="tab" aria-controls="nav-account" aria-selected="true"><span class="bi bi-person-circle"></span> My Account</button>
+            <button class="nav-link" id="nav-company-tab" data-bs-toggle="tab" data-bs-target="#nav-company" type="button" role="tab" aria-controls="nav-company" aria-selected="false"><span class="bi bi-person-lines-fill"></span> My Company</button>
+            <a href="{% url 'logout.html' %}" class="nav-link"><span class="bi bi-box-arrow-right"></span> Sign Out</a>
+          </div>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0">
+          <form method="POST" action="{% url 'update-customer' %}">
+            {% csrf_token %}
+            <div class="container">
+              <div class="tab-content-wrapper">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h3>Personal Data</h3>
+                    <div class="form-group">
+                      {{ customer_form.name }}
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="form-group">
+                      {{ customer_form.prefix }}
+                      <label for="mname">Prefix</label>
+                    </div>
+                    <div class="form-group">
+                      {{ customer_form.familyname }}
+                      <label for="lname">Last Name</label>
+                    </div>
+                    <div class="form-group">
+                      {{ customer_form.phone }}
+                      <label for="phone">Phone</label>
+                    </div>
+                    <div class="form-group">
+                      {{ customer_form.email }}
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ps-5">
+                      <h3>Change Password</h3>
+                      <div class="form-group">
+                        <input class="form-control" type="password" name="oldpass" id="oldpass">
+                        <label for="oldpass">Current Password</label>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" type="password" name="newpass" id="newpass">
+                        <label for="newpass">New Password</label>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" type="password" name="repeatpass" id="repeatpass">
+                        <label for="repeatpass">Repeat Password</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="submit-btn-wrapper">
+              <div class="container">
+                <button type="submit" class="update-button">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="nav-company" role="tabpanel" aria-labelledby="nav-company-tab" tabindex="0">
+          <form method="post" action="{% url 'update-company' %}">
+            {% csrf_token %}
+            <div class="container">
+              <div class="tab-content-wrapper">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h3>Company Details</h3>
+                    <div class="form-group">
+                      {{company_form.companyname}}
+                      <label for="companyname">Company Name</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.vat}}
+                      <label for="vatnumber">VAT Number</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.phone}}
+                      <label for="phone">Phone</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.email}}
+                      <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.get_keys_language}}
+                      <label for="lang">Language</label>
+                    </div>
+                    <h3>Address Details</h3>
+                    <div class="form-group">
+                      {{company_form.address}}
+                      <label for="address">Address</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.zip}}
+                      <label for="postal">Postal Code</label>
+                    </div>
+                    <div class="form-group">
+                      {{company_form.city}}
+                      <label for="city">City</label>
+                    </div>
+                    <div class="form-group mb-0">
+                      {{company_form.country}}
+                      <label for="country">Country</label>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ps-5">
+                      <h3>Billing Address</h3>
+                      <div class="form-group">
+                        {{company_form.billing_company_name}}
+                        <label for="companyname">Company Name</label>
+                      </div>
+                      <div class="form-group">
+                        {{company_form.billing_vat}}
+                        <label for="vatnumber">VAT Number</label>
+                      </div>
+                      <div class="form-group">
+                        {{company_form.billing_adr}}
+                        <label for="address">Address</label>
+                      </div>
+                      <div class="form-group">
+                        {{company_form.billing_zip}}
+                        <label for="postal">Postal Code</label>
+                      </div>
+                      <div class="form-group">
+                        {{company_form.billing_city}}
+                        <label for="city">City</label>
+                      </div>
+                      <div class="form-group mb-0">
+                        {{company_form.billing_country}}
+                        <label for="country">Land</label>
+                      </div>
+                      <div class="form-group">
+                        {{company_form.billing_email}}
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="submit-btn-wrapper">
+              <div class="container">
+                <button type="submit" class="update-button">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+	</main>
+{%endblock%}
+  
+	
+  <footer>
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="/static/images/zibber-logo-light.svg" alt="LOGO" class="img-fluid">
+      </a>
+      <p>&copy; 2023, Immobeeld all right reserved.</p>
+    </div>
+  </footer>
+	<!-- scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- custom script -->
+	<script src="/static/js/main.js"></script>
+</body>
+
+</html>

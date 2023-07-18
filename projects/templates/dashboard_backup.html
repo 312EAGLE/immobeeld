@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="profile-buttons">
+  <a href="/booking" class="profile-button">Create New Booking</a>
+  <a href="/dashboard" class="profile-button">Dashboard</a>
+  <a href="/orders" class="profile-button">Orders</a>
+</div>
+
+{% if customer %}
+  <div>
+    <h1>My account details</h1>
+    <div>
+      
+      <!-- and so on for other fields -->
+
+      <form method="POST" action="{% url 'update-customer' %}">
+        {% csrf_token %}
+        {{ customer_form.as_p }}
+
+        <button type="submit" class="update-button">Update Customer Details</button>
+      </form>
+    </div>
+  </div>
+{% else %}
+  <p>No customer information available.</p>
+{% endif %}
+
+{% if company %}
+  <div>
+    <h1>My company details</h1>
+    <div>
+      
+      <!-- and so on for other fields -->
+
+      <form method="POST" action="/update/company/">
+        {% csrf_token %}
+        {{ company_form.as_p }}
+
+        <button type="submit" class="update-button">Update Company Details</button>
+      </form>
+    </div>
+  </div>
+{% else %}
+  <p>No company information available.</p>
+{% endif %}
+
+{% endblock content %}
+
+
+
+
+<div class="tab stepThree">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="check-form-group">
+        <label for="keyPickup">Sleutels ophalen?</label>
+        {{ form.keys }}
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="check-form-group">
+        <label for="keyPickup">Bij wie kunnen we de sleutel ophalen?</label>
+        {{ form.get_keys }}
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="check-form-group">
+        <label for="fileRecipient">Wie mag de opgeleverde bestanden ontvangen?</label>
+        {{ form.delivery_recipient }}
+      </div>
+    </div>
+    
+    <div class="col-md-12">
+      <div class="check-form-group">
+        <label for="invoiceRecipient">Wie ontvangt de factuur?</label>
+        {{ form.invoice_recipient }}
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        {{ form.cost_reference }}
+        <label for="costReference">Kostenreferentie toevoegen</label>
+      </div>
+    </div>
+  </div>
+</div>

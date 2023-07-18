@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <title>Vastgoed Fotografie | IMMOBEELD</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'scss/services/style.css' %}">
+
+  <!-- The content of your page goes here -->
+  <!-- <header>
+    header goes here
+  </header> -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="title">Vastgoed fotografie</h1>
+          <hr class="custom-divider">
+          <h2 class="subtitle">LEG JE VASTGOED VAST MET PROFESSIONELE FOTOGRAFIE</h2>
+          <div class="hero-btns">
+            <a href="#" class="hero-btn btn-primary">FOTOSERVICE</a>
+            <a href="#" class="hero-btn btn-primary">HOOGTEFOTOGRAFIE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="full-width right-content">
+      <div class="section-inner">
+          <div class="left-side-img">
+            <div class="spacer"></div>
+          </div>
+          <div class="right-side">
+            <div class="contents">
+              <h3 class="section-small-title">VOOR- EN NADELEN</h3>
+              <h2 class="section-big-title">VAN PROFESSIONELE VASTGOEDFOTOGRAFIE</h2>
+              <p>Een professionele vastgoedfotografie kan de visuele aantrekkingskracht van uw eigendom sterk verbeteren. Het kan helpen om de aandacht van potentiële kopers te trekken en hun interesse in het pand te vergroten. Bovendien kan het de kopers een beter idee geven van hoe het pand er in werkelijkheid uitziet, wat kan bijdragen aan een vlottere verkoop.
+                <br> <br>
+                Hoewel vastgoedfotografie veel voordelen heeft, kan het ook enkele nadelen hebben. Een van de belangrijkste nadelen is de kosten. Afhankelijk van de omvang en de locatie van het pand, kan een professionele vastgoedfotoshoot een aanzienlijke investering vergen.
+                <br> <br>
+                Bij ImmoBeeld bieden we hoogwaardige vastgoedfotografiediensten aan tegen betaalbare prijzen. We gebruiken de nieuwste technologieën en technieken om prachtige, realistische foto's van uw eigendom te maken die potentiële kopers aantrekken.</p>
+            </div>
+            <div class="btm-images">
+              <img src="/static/images/full-360-degree-seamless-panorama-in-equirectangular-spherical-projection-.jpg" alt="img" class="img-fluid">
+              <img src="/static/images/3d-house-interior-768x384.jpg" alt="img" class="img-fluid">
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="box-width right-content">
+      <div class="container">
+        <div class="section-inner">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="left-side">
+                <div class="contents">
+                  <h3 class="section-small-title">ONZE DIENSTEN</h3>
+                  <h2 class="section-big-title">FOTOGRAFIE DIE DE SFEER VANGT</h2>
+                  <p>
+                    Bij ImmoBeeld begrijpen we dat elk pand uniek is en zijn eigen charme heeft. Daarom streven we ernaar om met onze fotografie de unieke kenmerken en sfeer van elk pand vast te leggen. Onze professionele fotografen hebben jarenlange ervaring in de vastgoedfotografie en hebben een scherp oog voor detail. Zij weten precies hoe ze de beste hoeken en lichtomstandigheden kunnen benutten om de meest aantrekkelijke en realistische foto's van uw pand te maken.
+                    <br><br>
+                    Of u nu een gezellig appartement, een luxe villa, een modern kantoorgebouw of een rustiek landhuis wilt presenteren, wij kunnen u helpen om uw vastgoed op de meest aantrekkelijke manier te presenteren. Met onze hoogwaardige vastgoedfotografie kunt u de aandacht van potentiële kopers trekken en hun interesse in uw pand vergroten.
+                  </p>
+                  <ul class="list">
+                    <li>Professionele fotografen</li>
+                    <li>Scherpe en duidelijke beelden</li>
+                    <li>Aantrekkelijke presentatie van uw pand</li>
+                    <li>Hoogwaardige afbeeldingen voor online en offline gebruik</li>
+                    <li>Snelle en betrouwbare service</li>
+                    <li>Concurrerende prijzen</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 right-side-img">
+              <div class="right-side">
+                <img src="/static/images/virtual_staging_1.png" alt="" class="img-fluid">
+                <div class="video-frame">
+                  <a id="play-video" class="video-play-button" href="#">
+                    <span></span>
+                  </a>
+                </div>
+                
+                <div id="video-overlay" class="video-overlay">
+                  <a class="video-overlay-close">&times;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  </main>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock content %}
+

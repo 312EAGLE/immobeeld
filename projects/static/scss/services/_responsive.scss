@@ -1,0 +1,146 @@
+
+@media screen and (max-width:768px) {
+  .full-width{
+    .section-inner{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      .left-side-img{
+        height: 500px;
+      }
+      .right-side{
+        .contents{
+          padding: 7rem 2rem;
+        }
+      }
+      .btm-images{
+        display: flex;
+        img{
+          width: 50%;
+        }
+      }
+    }
+  }
+  .box-width{
+    padding: 10rem 0;
+    .section-inner{
+      .right-side-img{
+        padding-left: 4rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+      }
+      .left-side{
+        margin-right: 0;
+      }
+    }
+  }
+
+  .box-width.matterport{
+    .section-inner{
+      position: relative;
+      z-index: 3;
+      .right-side-img{
+        padding-left: 1rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  
+
+}
+
+@media screen and (max-width:425px) {
+  .container{
+    padding: 0rem 2rem;
+  }
+  .hero{
+    .hero-content{
+      .hero-btns{
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  }
+  .full-width{
+    .section-inner{
+      .left-side-img{
+        height: 300px;
+      }
+      .btm-images{
+        display: flex;
+        flex-wrap: wrap;
+        img{
+          width: 50%;
+        }
+      }
+    }
+  }
+  .box-width{
+    padding: 10rem 0;
+    .section-inner{
+      .right-side-img{
+        padding-left: 4rem;
+        margin-bottom: 4rem;
+      }
+      .right-side{
+        position: relative;
+        img{
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+  
+      }
+      .left-side{
+        margin-right: 6rem;
+        .contents{
+          .list{
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
+  .box-width.matterport{
+    background: url(../images/matterport.jpeg) center/cover no-repeat;
+    padding: 15rem 0 5rem;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;left: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .section-inner{
+      position: relative;
+      z-index: 3;
+      .right-side-img{
+        padding-left: 0rem;
+        margin-bottom: 4rem;
+      }
+      .right-side{
+        position: relative;
+        img{
+          width: 100%;
+          height: 600px;
+          object-fit: cover;
+        }
+      }
+      .left-side{
+        margin-right: 0rem;
+        .contents{
+          .list{
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
+  
+}

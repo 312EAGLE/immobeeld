@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <title>360 Vastgoed Virtual Tours | IMMOBEELD</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'scss/services/style.css' %}">
+
+  <!-- The content of your page goes here -->
+  <!-- <header>
+    header goes here
+  </header> -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="title">360 Vastgoed Virtual Tours</h1>
+          <hr class="custom-divider">
+          <h2 class="subtitle">GEEF EEN BREDE KIJK OP DE ZAKEN</h2>
+          <div class="hero-btns">
+            <a href="#" class="hero-btn btn-primary">2D PLAN | IGUIDE</a>
+            <a href="#" class="hero-btn btn-primary">3D PLAN | MATTERPORT</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="full-width right-content">
+      <div class="section-inner">
+          <div class="left-side-img">
+            <div class="spacer"></div>
+          </div>
+          <div class="right-side">
+            <div class="contents">
+              <h3 class="section-small-title">VOOR- EN NADELEN</h3>
+              <h2 class="section-big-title">VAN EEN VIRTUEEL WONINGBEZOEK</h2>
+              <p>Een virtueel bezoek behoort al lange tijd tot de werkinstrumenten bij de verkoop van vastgoed. Met de
+              technologie brengen we alle hoeken van de woning in beeld. Dit heeft als voordeel dat kandidaten zich
+              beter kunnen oriënteren alvorens een afspraak te maken. Het verhoogt de kwaliteit van de bezoekers en
+              geeft tijdswinst.
+              <br> <br>
+              Volgens sommigen kan een virtual tour soms te veel informatie geven, waardoor geïnteresseerden onterecht
+              kunnen afhaken. Het is dus belangrijk om een virtueel bezoek in de juiste situaties correct toe te passen
+              voor een goed resultaat.
+              <br> <br>
+              Bij ImmoBeeld wegen onze fotografen samen met u ter plaatse de voor- en nadelen af, zodat onze 360 virtual
+              tours altijd een meerwaarde bieden.</p>
+            </div>
+            <div class="btm-images">
+              <img src="/static/images/full-360-degree-seamless-panorama-in-equirectangular-spherical-projection-.jpg" alt="img" class="img-fluid">
+              <img src="/static/images/3d-house-interior-768x384.jpg" alt="img" class="img-fluid">
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="box-width right-content">
+      <div class="container">
+        <div class="section-inner">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="left-side">
+                <div class="contents">
+                  <h3 class="section-small-title">2d Plan met tour van 360 graden foto's</h3>
+                  <h2 class="section-big-title">Iguide in Europa! zomer 2023!</h2>
+                  <p>
+                    iGuide is een geavanceerde tool die wordt gebruikt voor het maken van interactieve virtuele rondleidingen van onroerend goed. Met deze tool kunnen makelaars en vastgoed professionals een 360-graden tour van een pand maken en interactieve functies toevoegen, zoals plattegronden, meetinstrumenten en multimedia-elementen.
+                    <br><br>
+                    Het goede nieuws is dat Immobeeld van plan is om iGuide te gaan gebruiken zodra deze beschikbaar wordt in de zomer van 2023. Dit zal een belangrijke stap zijn voor Immobeeld om hun diensten te verbeteren en de klantervaring te verbeteren. Met iGuide kunnen klanten van Immobeeld de onroerendgoedmarkt beter verkennen en zich een duidelijker beeld vormen van de eigenschappen die zij overwegen.
+                    <br><br>
+                    iGuide is een krachtige en innovatieve tool die de manier waarop vastgoed wordt gepresenteerd en verkocht verandert. En met de inzet van Immobeeld om iGuide te gaan gebruiken, zullen klanten binnenkort kunnen genieten van een ongeëvenaarde ervaring bij het verkennen van onroerend goed.
+                  </p>
+                  <ul class="list">
+                    <li>Verbeterde klantbetrokkenheid</li>
+                    <li>Tijdbesparend</li>
+                    <li>Kostenbesparend</li>
+                    <li>Interactieve plattegronden</li>
+                    <li>Consistente kwaliteit</li>
+                    <li>SEO-vriendelijk</li>
+                    <li>Analysefuncties</li>
+                    <li>Mobielvriendelijk</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 right-side-img">
+              <div class="right-side">
+                <img src="/static/images/virtual_staging_1.png" alt="" class="img-fluid">
+                <div class="video-frame">
+                  <a id="play-video" class="video-play-button" href="#">
+                    <span></span>
+                  </a>
+                </div>
+                
+                <div id="video-overlay" class="video-overlay">
+                  <a class="video-overlay-close">&times;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="matterport box-width right-content">
+      <div class="container">
+        <div class="section-inner">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="left-side">
+                <div class="contents">
+                  <h3 class="section-small-title">Bekijk het grotere geheel</h3>
+                  <h2 class="section-big-title">MATTERPORT</h2>
+                  <p>
+                    ImmoBeeld biedt ook de innovatieve Matterport rondleidingen aan. Hierbij wordt er een 3D-scan gemaakt van het interieur van de woning en in een interactieve omgeving geplaatst. Hierdoor kan de bezoeker virtueel rondwandelen in de kamers. Een knap staaltje technologie.
+                  </p>
+                  <ul class="list">
+                    <li>Interactieve virtuele rondleidingen</li>
+                    <li>Eenvoudig te delen</li>
+                    <li>Meerdere weergave-opties</li>
+                    <li>Meetinstrumenten</li>
+                    <li>Integratie met andere platforms</li>
+                    <li>Kostenbesparend</li>
+                    <li>Verbeterde klantervaring</li>
+                    <li>Analytics</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 right-side-img">
+              <div class="right-side">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/FXDjMJJDbqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock content %}
+

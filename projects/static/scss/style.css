@@ -1,0 +1,637 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset default styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+img {
+  pointer-events: none;
+}
+
+::-moz-selection {
+  color: white;
+  background: #1f7ff0;
+}
+
+::selection {
+  color: white;
+  background: #1f7ff0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.5s;
+  color: #1f2e4b;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #1f2e4b;
+}
+
+p {
+  margin: 0;
+  color: #1f2e4b;
+}
+
+/* Set headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  color: #1f2e4b;
+  margin: 0px;
+}
+
+h1 {
+  font-family: "Seymour One", sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
+/* Set lists */
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: decimal;
+}
+
+/* Set tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: bold;
+}
+
+button {
+  background: #1f7ff0;
+  border: none;
+  font-size: 15px;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+button:hover {
+  background: #1f2e4b;
+}
+
+a.btn-primary {
+  background: #1f7ff0;
+  border: none;
+  font-size: 12px;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+a.btn-primary:hover {
+  background: #1f2e4b;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.form-control, .form-select {
+  outline: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.form-control:focus, .form-select:focus {
+  box-shadow: none;
+  border-color: #1f7ff0;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+.form-group label:not(.form-check-label) {
+  position: absolute;
+  cursor: text;
+  z-index: 1;
+  top: 15px;
+  left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #1f7ff0;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  top: -10px;
+  color: #1f7ff0;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+.form-group .form-control, .form-group .form-select {
+  padding: 13px 15px;
+  background: transparent;
+  border: solid 1px #ccc;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.form-group .form-control:focus, .form-group .form-select:focus {
+  border-color: #1f7ff0;
+}
+
+.check-form-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+.check-form-group label:not(.form-check-label) {
+  cursor: text;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: bold;
+  background: #fff;
+  color: #1f7ff0;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+header .navbar {
+  background: #1f2e4b;
+  box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 0px !important;
+}
+header .navbar .navbar-brand img {
+  width: 100px;
+}
+header .navbar .navbar-nav {
+  align-items: center;
+}
+header .navbar .navbar-nav .nav-item {
+  margin: 0px 5px;
+}
+header .navbar .navbar-nav .nav-item .nav-link {
+  font-weight: 600;
+  color: white;
+  padding: 7px 15px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+header .navbar .navbar-nav .nav-item .nav-link:hover {
+  background: rgba(255, 255, 255, 0.192);
+}
+header .navbar .navbar-nav .nav-item .nav-link span {
+  margin-right: 5px;
+  color: white;
+  font-size: 20px;
+}
+header .navbar .navbar-nav .nav-item .nav-link.orderBtn {
+  background: #2fc974;
+}
+header .navbar .navbar-nav .nav-item .nav-link.orderBtn span {
+  color: white;
+}
+header .navbar .navbar-nav .nav-item .nav-link.orderBtn:hover {
+  background: #25a05c;
+}
+header .navbar .navbar-nav .nav-item .dropdown-menu {
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+  font-weight: 600;
+  color: #1f2e4b;
+  padding: 5px 20px;
+  border-radius: 0px;
+}
+header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+  background: #e8f0fc;
+}
+header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item span {
+  margin-right: 5px;
+  color: #1f7ff0;
+  font-size: 20px;
+}
+
+.greetings {
+  padding: 30px 0px;
+  background: #e8f0fc;
+}
+.greetings .name-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.greetings h2 {
+  font-size: 24px;
+  font-weight: 600;
+  display: inline-block;
+}
+.greetings h2 span {
+  font-size: 16px;
+  font-weight: 500;
+}
+.greetings a {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.greetings a span {
+  color: #2fc974;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.greetings a:hover {
+  border-color: #2fc974;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.promo-boxes {
+  padding: 70px 0px;
+}
+.promo-boxes .single-promo {
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: 0.4s;
+  margin-bottom: 40px;
+}
+.promo-boxes .single-promo .single-promo-img {
+  overflow: hidden;
+}
+.promo-boxes .single-promo .single-promo-img a {
+  display: block;
+}
+.promo-boxes .single-promo .single-promo-img img {
+  transition: 0.5s;
+}
+.promo-boxes .single-promo:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+.promo-boxes .single-promo:hover .single-promo-img {
+  overflow: hidden;
+}
+.promo-boxes .single-promo:hover .single-promo-img img {
+  transform: scale(1.2);
+}
+.promo-boxes .single-promo .promo-meta {
+  margin: 10px 0px;
+}
+.promo-boxes .single-promo .promo-meta i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.promo-boxes .single-promo .promo-meta .meta-text a {
+  font-size: 14px;
+  color: black;
+}
+.promo-boxes .single-promo .promo-text {
+  margin: 10px 0px;
+}
+.promo-boxes .single-promo .promo-text h4 {
+  margin-bottom: 10px;
+}
+.promo-boxes .single-promo .promo-text h4 a {
+  font-size: 22px;
+  color: #1f2e4b;
+  font-weight: 600;
+}
+.promo-boxes .single-promo .promo-text h4 a:hover {
+  color: #1f7ff0;
+}
+.promo-boxes .single-promo .promo-text p {
+  font-size: 15px;
+}
+.promo-boxes .single-promo .read-btn {
+  color: #1f2e4b;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 0px 5px;
+  margin-top: 15px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.4s ease 0s;
+  z-index: 2;
+  position: relative;
+  margin-left: 5px;
+}
+.promo-boxes .single-promo .read-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  width: 3px;
+  height: 100%;
+  background: #1f2e4b;
+  transition: 0.4s;
+}
+.promo-boxes .single-promo .read-btn:hover {
+  color: #1f7ff0;
+  text-decoration: none;
+}
+.promo-boxes .single-promo .read-btn:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  width: 3px;
+  height: 100%;
+  background: #1f7ff0;
+}
+
+.search-filter {
+  padding: 30px 0px;
+  background: #e8f0fc;
+}
+.search-filter .filter-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found {
+  margin-bottom: 30px;
+}
+.not-found a {
+  display: block;
+  padding: 25px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+.not-found a span {
+  color: #2fc974;
+  font-size: 34px;
+  margin-right: 10px;
+  display: block;
+}
+.not-found a:hover {
+  border-color: #2fc974;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.account nav {
+  padding: 50px 0px 0px;
+  background: #e8f0fc;
+}
+.account nav .nav {
+  border: none;
+}
+.account nav .nav-link {
+  border-radius: 0px;
+  border: none;
+  font-weight: 500;
+  color: #1f2e4b;
+}
+.account nav .nav-link span {
+  margin-right: 5px;
+}
+.account nav .nav-link.active {
+  color: #1f7ff0;
+}
+.account .tab-content .tab-content-wrapper {
+  margin-bottom: 50px;
+}
+.account .tab-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 30px 0px;
+}
+.account .submit-btn-wrapper {
+  padding: 30px 0px;
+  background: #e8f0fc;
+  text-align: right;
+}
+
+footer {
+  padding: 50px 0px 30px;
+  background: #1f2e4b;
+  color: white;
+  text-align: center;
+}
+footer img {
+  width: 120px;
+}
+footer p {
+  margin: 10px 0px 0px;
+  color: white;
+}
+
+.steps-wrapper {
+  background: #1f2e4b;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  padding: 50px 50px;
+  z-index: 15;
+}
+.steps-wrapper img {
+  width: 120px;
+  margin-bottom: 30px;
+}
+.steps-wrapper .single-step {
+  position: relative;
+  padding: 0px 30px 30px;
+  border-left: 2px dashed #35435f;
+}
+.steps-wrapper .single-step:last-of-type {
+  border: none;
+  padding-bottom: 0px;
+}
+.steps-wrapper .single-step:last-of-type.active {
+  border-left: none;
+}
+.steps-wrapper .single-step .step-number {
+  position: absolute;
+  top: 0px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background: #35435f;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+}
+.steps-wrapper .single-step .step-title {
+  color: #576378;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.steps-wrapper .single-step .step-desc {
+  font-size: 14px;
+  color: #576378;
+}
+.steps-wrapper .single-step.active {
+  border-left: 2px dashed white;
+}
+.steps-wrapper .single-step.active .step-number {
+  background: #1f7ff0;
+}
+.steps-wrapper .single-step.active .step-title {
+  color: white;
+}
+.steps-wrapper .single-step.active .step-desc {
+  color: #1f7ff0;
+}
+.steps-wrapper .single-step.done {
+  border-left: 2px dashed white;
+}
+.steps-wrapper .single-step.done .step-number {
+  background: #1f7ff0;
+}
+.steps-wrapper .single-step.done .step-title {
+  color: white;
+}
+.steps-wrapper .single-step.done .step-desc {
+  color: #1f7ff0;
+}
+
+.form-side {
+  padding: 50px;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+.form-side .tab {
+  display: none;
+  padding-bottom: 60px;
+}
+.form-side .tab h4 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.form-side .btns-group {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  background: #e8f0fc;
+  width: 75%;
+  z-index: 5;
+}
+.form-side .btns-group #nextBtn {
+  float: right;
+}
+.form-side .btns-group #prevBtn {
+  float: left;
+}/*# sourceMappingURL=style.css.map */
+
+.order-table {
+  overflow-x: auto; /* This will make the div scrollable when content overflows */
+  white-space: nowrap; /* This will prevent the cells from breaking down into multiple lines */
+}
+
+.dtHorizontalVerticalExampleWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+#dtHorizontalVerticalExample th, td {
+  white-space: nowrap;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
+

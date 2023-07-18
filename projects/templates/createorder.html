@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immobeeld | Order</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css' />
+
+  <link rel="icon" href="/static/images/favicon.png">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'scss/style.css' %}">
+
+</head>
+
+<body>
+
+  <main>
+    <section class="order-section">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="steps-wrapper">
+            <img src="/static/images/zibber-logo-light.svg" alt="LOGO" class="img-fluid">
+            <div class="single-step">
+              <span class="step-number">01</span>
+              <h2 class="step-title">Project</h2>
+              <p class="step-desc">Specificaties van het project</p>
+            </div>
+            <div class="single-step">
+              <span class="step-number">02</span>
+              <h2 class="step-title">Diensten</h2>
+              <p class="step-desc">Wat wil je laten uitvoeren?</p>
+            </div>
+            <div class="single-step">
+              <span class="step-number">03</span>
+              <h2 class="step-title">Gegevens</h2>
+              <p class="step-desc">Alles over gegevens</p>
+            </div>
+            <div class="single-step">
+              <span class="step-number">04</span>
+              <h2 class="step-title">Contact Info</h2>
+              <p class="step-desc">Check, check, dubbel check.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 p-0">
+          <div class="form-side form-wrapper">
+            <form action="" method="post" id="orderForm">
+              {% csrf_token %}
+              <!-- Step 1 -->
+              <div class="tab stepOne active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.type.label_tag }}
+                      {{ form.type }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.country.label_tag }}
+                      {{ form.country }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group medium-label">
+                      {{ form.straatnaam.label_tag }}
+                      {{ form.straatnaam }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group small-label">
+                      {{ form.huisnummer.label_tag }}
+                      {{ form.huisnummer }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group small-label">
+                      {{ form.toevoeging.label_tag }}
+                      {{ form.toevoeging }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.postcode.label_tag }}
+                      {{ form.postcode }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.plaats.label_tag }}
+                      {{ form.plaats }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.gebruiksoppervlakte.label_tag }}
+                      {{ form.gebruiksoppervlakte }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.oppervlakteBijgebouwen.label_tag }}
+                      {{ form.oppervlakteBijgebouwen }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      {{ form.perceel.label_tag }}
+                      {{ form.perceel }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+              <!-- Step 1 end -->
+              <!-- Step 2 -->
+              <div class="tab stepTwo"> 
+                <div class="row">
+                  {% for service in services %}
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input class="form-check-input" type="checkbox" name="services" id="{{ service.id }}" value="{{ service.id }}">
+                      <label class="form-check-label" for="{{ service.id }}">{{ service.service_name }} - €{{ service.price }}</label>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div id="total-price"></div>
+              <!-- Step 2 end -->
+              
+              <!-- Step 3 -->
+              <div class="tab stepThree">
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      {{ form.keys }}
+                      <label for="keyPickup">Sleutel ophalen?</label>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-12">
+                    <div class="check-form-group">
+                      <label for="keyPickup">Bij wie kunnen we de sleutel ophalen?</label>
+                      {% for choice in form.get_keys %}
+                        <div class="form-check">
+                          {{ choice }}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                
+                  <div class="col-md-12">
+                    <div class="check-form-group">
+                      <label for="fileRecipient">Wie mag de opgeleverde bestanden ontvangen?</label>
+                      
+                        {% for choice in form.delivery_recipient %}
+                        <div class="form-check">
+                          {{ choice }}
+                        </div>
+                        {%endfor%}
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-12">
+                    <div class="check-form-group">
+                      <label for="fileRecipient">Wie ontvangt de factuur?</label>
+                      
+                        {% for choice in form.invoice_recipient %}
+                        <div class="form-check">
+                          {{ choice }}
+                        </div>
+                        {%endfor%}
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    {{ form.cost_reference }}
+                    <label for="lang">Kostenreferentie toevoegen</label>
+                  </div>
+                  
+
+                </div>
+              </div>
+              <!-- Step 3 end -->
+      
+              <!-- Step 4 -->
+              <div class="tab stepFour">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Ophalen sleutel</h4>
+                    <div class="form-group">
+                      {{ form.get_keys_name }}
+                      <label for="contactName">Naam</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_phone }}
+                      <label for="contactPhone">Phone</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_email }}
+                      <label for="contactEmail">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_language }}
+                      <label for="lang">Language</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_adr }}
+                      <label for="contactAddress">Address</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_zip }}
+                      <label for="contactAddress">Address</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.get_keys_city }}
+                      <label for="contactAddress">Address</label>
+                    </div>
+                    <h4>Opleveren bestanden</h4>
+                    <div class="form-group">
+                      {{ form.rec_email }}
+                      <label for="contactEmail">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.rec_email_owner }}
+                      <label for="ownerEmail">Email van Eigenaar</label>
+                    </div>
+                    <div class="form-group">
+                      {{ form.rec_email_other }}
+                      <label for="otherEmail">Email van Andere </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ps-5">
+                      <h4>Facturatie</h4>
+                      <div class="form-group">
+                        {{form.inv_name}}
+                        <label for="companyname">Company Name</label>
+                      </div>
+                      <div class="form-group">    
+                        {{form.inv_vat}}
+                        <label for="vatnumber">VAT Number</label>
+                      </div>
+                      <div class="form-group">
+                        {{form.inv_adr}}
+                        <label for="address">Address</label>
+                      </div>
+                      <div class="form-group">
+                        {{form.inv_zip}}
+                        <label for="postal">Postal Code</label>
+                      </div>
+                      <div class="form-group">
+                        {{form.inv_city}}
+                        <label for="city">City</label>
+                      </div>
+                      <div class="form-group mb-0">
+                        {{form.inv_country}}
+                        <label for="country">Land</label>
+                      </div>
+                      <div class="form-group">
+                        {{form.inv_phone}}
+                        <label for="contactPhone">Phone</label>
+                      </div>
+                      <div class="form-group">
+                        {{form.inv_email}}
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea class="form-control" type="text" name="comments" id="comments" rows="5"></textarea>
+                      <label for="comments">Extra info or comments</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-check mb-5">
+                      <input class="form-check-input" type="checkbox" value="" id="billingAddress" checked>
+                      <label class="form-check-label" for="billingAddress">
+                        I agree to the General Terms and Conditions and the Processor Agreement
+                      </label>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Step 4 end<button type="submit">Submit</button> -->
+              <div class="btns-group">
+                <div class="btns-wrapper">
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- custom script -->
+  <script src="/static/js/main.js"></script>
+</body>
+
+</html>

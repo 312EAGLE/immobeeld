@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="profile-buttons">
+    <a href="/booking" class="profile-button">Create New Booking</a>
+    <a href="/dashboard" class="profile-button">Dashboard</a>
+    <a href="/orders" class="profile-button">Orders</a>
+    
+  </div>
+<div>
+    <h1>ORDERS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Type</th>
+        <th>customer name</th>
+        <th>customer id</th>
+        <!-- Add other desired table headers -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.id }}</td>
+        <td>{{ order.type }}</td>
+        <td>{{ order.company_name }}</td>
+        <td>{{ order.customer.id }}</td>
+        <!-- Add other desired table cells -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="static/css/bootstrap.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 d-flex align-items-center justify-content-center" style="background-color: #F68C60; height: 100vh;">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <h1 style="color: white; font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 71px;">Vastgoed Fotografie</h1>
+        <h4 style="color: white;">GEMAAKT VOOR VASTGOEDMAKELAARS</h4>
+        <a href="{% url 'foto.html' %}" class="btn btn-light mt-3" style="background-color: #fcfcfc; font-family: 'Poppins', sans-serif; padding: 20px 40px; font-size: 20px; border-radius: 5px;">ONTDEK ONZE DIENSTEN</a>
+
+      </div>
+    </div>
+
+    <div class="col-6 position-relative" style="background-image: url('static/images/home-right.jpg'); background-size: cover; background-position: center;">
+      <div class="position-absolute" style="background-color: #000000BA; top: 0; bottom: 0; left: 0; right: 0;"></div>
+
+      <div class="d-flex flex-column align-items-start justify-content-center" style="height: 100vh; position: relative; margin-left: 30px;">
+        <h4 style="color: #F68C60;">SNEL & EENVOUDIG</h4>
+        <h1 style="color: #ffffff; font-weight: 600; font-size: 56px;">4 UUR LEVERING</h1>
+        <div style="background-color: white; padding: 0px; width: 100%; display: flex; align-items: center; margin-bottom: 10px; ">
+          <img style="max-width: 100px; max-height: 100px;" src="static/images/icons/calendar.png" alt="Calendar icon">
+          <h5 style="color: #000000; margin: 0;">Boek de shooting</h5>
+      </div>
+      
+        <div style="background-color: white; padding: 0px; width: 100%; display: flex; align-items: center; margin-bottom: 10px; ">
+          <img style="max-width: 100px; max-height: 100px;" src="static/images/icons/camera.png" alt="Calendar icon">
+          <h5 style="color: #000000; margin: 0;">Shooting</h5>
+        </div>
+
+        <div style="background-color: white; padding: 0px; width: 100%; display: flex; align-items: center; margin-bottom: 10px; ">
+          <img style="max-width: 100px; max-height: 100px;" src="static/images/icons/delivery.png" alt="Calendar icon">
+          <h5 style="color: #000000; margin: 0;">Ontvang binnen 4u</h5>
+        </div>
+
+   
+        <a href="{% url 'createorder.html' %}" class="btn btn-light mt-3" style="background-color: #F68C60; color: white; width: auto; padding: 12px 24px;">BOEK NU</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="path/to/bootstrap.js"></script>
+{% endblock content %}

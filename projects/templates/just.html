@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <title>Booking Form</title>
+</head>
+
+<body>
+  <form action="#" class="form">
+    <h1 class="text-center">Booking Form</h1>
+    <!-- Progress bar -->
+    <div class="progressbar">
+      <div class="progress" id="progress"></div>
+      <div class="progress-step progress-step-active" data-title="Het project"></div>
+      <div class="progress-step" data-title="Diensten"></div>
+      <div class="progress-step" data-title="Gegevens"></div>
+      <div class="progress-step" data-title="Contact info"></div>
+      
+    </div>
+
+    <!-- Step 1 -->
+    <div class="form-step form-step-active">
+      <div class="input-group">
+        <label for="type">Type</label>
+        <select name="type" id="type">
+          <option value="vrijstaand">Vrijstaand woning</option>
+          <option value="studio">Studio Appartement</option>
+          <option value="rijwoning">Rijwoning / Duplex / halfopen</option>
+          <option value="opbrengsteigendom">OpbrengstEigendom</option>
+          <option value="bouwgrond">Bouwgrond</option>
+          <option value="bedrijfspand">Bedrijfspand</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="land">Land</label>
+        <input type="text" name="land" id="land" value="Belgie" readonly>
+      </div>
+      <div class="input-row">
+        <div class="input-group medium-label">
+          <label for="straatnaam">Straatnaam</label>
+          <input type="text" name="straatnaam" id="straatnaam" />
+        </div>
+        <div class="input-group small-label">
+          <label for="huisnummer">Huisnummer</label>
+          <input type="text" name="huisnummer" id="huisnummer" />
+        </div>
+        <div class="input-group small-label">
+          <label for="toevoeging">Toevoeging</label>
+          <input type="text" name="toevoeging" id="toevoeging" />
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="postcode">Postcode</label>
+        <input type="text" name="postcode" id="postcode" />
+      </div>
+      <div class="input-group">
+        <label for="plaats">Plaats</label>
+        <input type="text" name="plaats" id="plaats" />
+      </div>
+      <div class="input-group">
+        <label for="gebruiksoppervlakte">Gebruiksoppervlakte (m²)</label>
+        <input type="text" name="gebruiksoppervlakte" id="gebruiksoppervlakte" />
+      </div>
+      <div class="input-group">
+        <label for="oppervlakteBijgebouwen">Oppervlakte bijgebouwen (m²)</label>
+        <input type="text" name="oppervlakteBijgebouwen" id="oppervlakteBijgebouwen" />
+      </div>
+      <div class="input-group">
+        <label for="perceel">Perceel (m²)</label>
+        <input type="text" name="perceel" id="perceel" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+    <!-- Step 1 end -->
+
+    <!-- Step 2 -->
+    <div class="form-step">
+      <div class="input-row">
+        <div class="input-group">
+          <input type="checkbox" name="photography" id="photography" />
+          <label for="photography">Fotografie van de woning - €115,00</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="360photography" id="360photography" />
+          <label for="360photography">360° Fotografie - €55,00</label>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <input type="checkbox" name="video" id="video" />
+          <label for="video">Video - €100,00</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="teaserReel" id="teaserReel" />
+          <label for="teaserReel">Video Teaser & Reel - €30,00</label>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <input type="checkbox" name="videoSlideshow" id="videoSlideshow" />
+          <label for="videoSlideshow">Video Diavoorstelling - €30,00</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="matterport" id="matterport" />
+          <label for="matterport">Matterport 3D - €110,00</label>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <input type="checkbox" name="floorplanner" id="floorplanner" />
+          <label for="floorplanner">Plattegrond - €45,00</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="renovation3d" id="renovation3d" />
+          <label for="renovation3d">3D Renovatie - €75,00</label>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <input type="checkbox" name="exteriorPhotography" id="exteriorPhotography" />
+          <label for="exteriorPhotography">Exterieur Fotografie - €85,00</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" name="dronePhotography" id="dronePhotography" />
+          <label for="dronePhotography">Drone Fotografie - €125,00</label>
+        </div>
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+    <!-- Step 2 end -->
+
+    <!-- Step 3 -->
+    <div class="form-step">
+      <div class="input-group">
+        <label for="keyPickup">Sleutel ophalen?</label>
+        <select name="keyPickup" id="keyPickup">
+          <option value="yes">Ja</option>
+          <option value="no">Nee</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="keyPickup">Bij wie kunnen we de sleutel ophalen?</label>
+        <select name="keyPickup" id="keyPickup">
+          <option value="Company">Pliner & Partners SA</option>
+          <option value="Other">Anders</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="fileRecipient">Wie mag de opgeleverde bestanden ontvangen?</label>
+        <select name="fileRecipient" id="fileRecipient">
+          <option value="pliner">Pliner & Partners SA</option>
+          <option value="eigenaar">Eigenaar</option>
+          <option value="anders">Anders</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="invoiceRecipient">Wie ontvangt de factuur?</label>
+        <select name="invoiceRecipient" id="invoiceRecipient">
+          <option value="pliner">Pliner & Partners SA</option>
+          <option value="eigenaar">Eigenaar</option>
+          <option value="anders">Anders</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="costReference">Kostenreferentie toevoegen</label>
+        <input type="text" name="costReference" id="costReference" placeholder="z.B. ABC123" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+    <!-- Step 3 end -->
+
+    <!-- Step 4 -->
+    <div class="form-step">
+      <div class="input-group">
+        <label for="contactName">Name</label>
+        <input type="text" name="contactName" id="contactName" value="Igor Pliner" />
+      </div>
+      <div class="input-group">
+        <label for="contactPhone">Phone</label>
+        <input type="tel" name="contactPhone" id="contactPhone" value="+32.484.27.27.27" />
+      </div>
+      <div class="input-group">
+        <label for="contactEmail">Email Address</label>
+        <input type="email" name="contactEmail" id="contactEmail" value="goodfellas@pliner.be" />
+      </div>
+      <div class="input-group">
+        <label for="contactAddress">Address</label>
+        <input type="text" name="contactAddress" id="contactAddress" value="Clos René Magritte, 1" />
+      </div>
+      <div class="input-group">
+        <label for="contactCity">City</label>
+        <input type="text" name="contactCity" id="contactCity" value="Jette" />
+      </div>
+      <div class="input-group">
+        <label for="contactCountry">Country</label>
+        <input type="text" name="contactCountry" id="contactCountry" value="Belgium" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <input type="submit" value="Submit" class="btn" />
+      </div>
+    </div>
+    <!-- Step 4 end -->
+
+  </form>
+
+  <script>
+    const prevBtns = document.querySelectorAll(".btn-prev");
+    const nextBtns = document.querySelectorAll(".btn-next");
+    const progress = document.getElementById("progress");
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-step");
+
+    let formStepsNum = 0;
+
+    nextBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        formStepsNum++;
+        updateFormSteps();
+        updateProgressbar();
+      });
+    });
+
+    prevBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        formStepsNum--;
+        updateFormSteps();
+        updateProgressbar();
+      });
+    });
+
+    function updateFormSteps() {
+      formSteps.forEach((formStep) => {
+        formStep.classList.remove("form-step-active");
+      });
+
+      formSteps[formStepsNum].classList.add("form-step-active");
+    }
+
+    function updateProgressbar() {
+      progressSteps.forEach((progressStep, idx) => {
+        if (idx < formStepsNum + 1) {
+          progressStep.classList.add("progress-step-active");
+        } else {
+          progressStep.classList.remove("progress-step-active");
+        }
+      });
+
+      const progressActive = document.querySelectorAll(".progress-step-active");
+
+      progress.style.width =
+        ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+    }
+  </script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,365 @@
+.hero{
+  padding: 80px 0px;
+  background: url(../images/2.jpg) center/cover no-repeat;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .hero-content{
+    position: relative;
+    z-index: 3;
+    h1{
+      font-size: 6.3rem;
+      color: $primary-color;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    }
+    h2{
+      font-size: 2rem;
+      color: white;
+      font-weight: 400;
+    }
+    .hero-btns{
+      margin-top: 5rem;
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+
+.full-width{
+  .section-inner{
+    display: flex;
+    .left-side-img{
+      min-width: 50%;
+      background: url(../images/methode_times_prod_web_bin_4293c404-b5cc-11ec-8c29-375fe0cc1f19.jpg) center/cover no-repeat;
+    }
+    .right-side{
+      .contents{
+        padding: 7rem;
+        .section-small-title{
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: black;
+          margin-bottom: 1.5rem;
+        }
+        .section-big-title{
+          font-size: 3.5rem;
+          font-weight: 400;
+          color: $primary-color;
+          margin-bottom: 2rem;
+        }
+        p{
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #374151;
+          line-height: 2.4rem;
+        }
+      }
+    }
+    .btm-images{
+      display: flex;
+      img{
+        width: 50%;
+      }
+    }
+  }
+}
+
+.box-width{
+  padding: 10rem 0;
+  .section-inner{
+    .right-side-img{
+      // background: url(../images/virtual_staging_1.png) center/cover no-repeat;
+      padding-left: 4rem;
+      margin-bottom: 4rem;
+    }
+    .right-side{
+      position: relative;
+      img{
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+      .video-frame{
+        position: absolute;
+        bottom: -50px;
+        left: -50px;
+        border: 10px solid white;
+        width: 300px;
+        height: 200px;
+        background: url(../images/360-panorana-of-modern-interior-room.jpg) center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before{
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 100%;
+          top: 0;left: 0;
+          background: #4d88c2ce;
+
+        }
+      }
+      
+      .video-play-button {
+        box-sizing: content-box;
+        display: block;
+        border-radius: 50%;
+        padding: 0px 0px 0px 10px;
+      }
+
+      .video-play-button:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 70px;
+        height: 70px;
+        background: black;
+        border-radius: 50%;
+        transition: all 500ms;
+      }
+
+      .video-play-button:hover:after {
+        background-color: $primary-color;
+      }
+      .video-play-button:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        width: 70px;
+        height: 70px;
+        background: black;
+        border-radius: 50%;
+        animation: pulse-border 1500ms ease-out infinite;
+        transition: all 500ms;
+      }
+      .video-play-button:hover:before {
+        background-color: $primary-color;
+      }
+
+      .video-play-button span {
+        display: block;
+        position: relative;
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-left: 32px solid #fff;
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+      }
+
+      @keyframes pulse-border {
+        0% {
+          transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .video-overlay {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.80);
+        opacity: 0;
+        transition: all ease 500ms;
+      }
+
+      .video-overlay.open {
+        position: fixed;
+        z-index: 1000;
+        opacity: 1;
+      }
+
+      .video-overlay-close {
+        position: absolute;
+        z-index: 1000;
+        top: 15px;
+        right: 20px;
+        font-size: 36px;
+        line-height: 1;
+        font-weight: 400;
+        color: #f1ad34;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 200ms;
+      }
+
+      .video-overlay-close:hover {
+        color: #ff4c60;
+        transform: scale(1.5);
+      }
+
+      .video-overlay iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 90%;
+        height: 90vh;
+        box-shadow: 0 0 15px rgba(0,0,0,0.75);
+      }
+
+      .video-play-button {
+        -webkit-animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+                animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+      }
+
+
+      @keyframes scale-up-center {
+        0% {
+          -webkit-transform: scale(0.5);
+                  transform: scale(0.5);
+        }
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+        }
+      }
+    }
+    .left-side{
+      margin-right: 6rem;
+      .contents{
+        .section-small-title{
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: black;
+          margin-bottom: 1.5rem;
+        }
+        .section-big-title{
+          font-size: 3.5rem;
+          font-weight: 400;
+          color: $primary-color;
+          margin-bottom: 2rem;
+        }
+        p{
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #374151;
+          line-height: 2.4rem;
+        }
+        .list{
+          margin-top: 3rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: 15px;
+          li{
+            font-size: 1.4rem;
+            color: $primary-color;
+            font-weight: 400;
+            margin-bottom: 0.7rem;
+            margin-left: 25px;
+            &::before{
+              font-family: 'bootstrap-icons';
+              content: "\F633";
+              margin:0 10px 0 -28px;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.box-width.matterport{
+  background: url(../images/matterport.jpeg) center/cover no-repeat;
+  padding: 15rem 0 5rem;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .section-inner{
+    position: relative;
+    z-index: 3;
+    .right-side-img{
+      padding-left: 4rem;
+      margin-bottom: 4rem;
+    }
+    .right-side{
+      position: relative;
+      img{
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+    }
+    .left-side{
+      margin-right: 0rem;
+      .contents{
+        .section-small-title{
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: white;
+          margin-bottom: 1.5rem;
+        }
+        .section-big-title{
+          font-size: 3.5rem;
+          font-weight: 400;
+          color: $primary-color;
+          margin-bottom: 2rem;
+        }
+        p{
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #ffffff;
+          line-height: 2.4rem;
+        }
+        .list{
+          margin-top: 3rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: 15px;
+          li{
+            font-size: 1.4rem;
+            color: $primary-color;
+            font-weight: 400;
+            margin-bottom: 0.7rem;
+            margin-left: 25px;
+            &::before{
+              font-family: 'bootstrap-icons';
+              content: "\F633";
+              margin:0 10px 0 -28px;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+    .btm-images{
+      display: flex;
+      img{
+        width: 50%;
+      }
+    }
+  }
+}
