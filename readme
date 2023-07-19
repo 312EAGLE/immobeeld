@@ -3,6 +3,8 @@
 This is a web application built with Django, for real estate owners/companies which want to order a visual service like ( realestate photography , videography, 360 degree virtual tours etc.) 
 It is a normal website with multi step - booking system.
 
+The website is similar to: zibber.be , immotools.be
+
 ## Setup
 
 1. **Clone the repository**
